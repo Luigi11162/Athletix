@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+$font : 'Inter', sans-serif;
+
+$red_color_primary: #e73539;//#e8253f;
+//$blu_color_primary: #346296;//#1f3751;
+$blu_color_primary: #1b4087;
+
+$save_button : #3fcd3f;
+
+@keyframes cascade-top-index {
+    from {top: -100px;}
+    to {top: 0px;}
+}
+  
+@keyframes cascade-top-reverse-index {
+    from {top: 0px;}
+    to {top: -150px;}
+}
+  
+.cascade-animation-top-index{
+    animation-name: cascade-top-index;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+  
+.cascade-animation-top-reverse-index{
+    animation-name: cascade-top-reverse-index;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+.notification{
+    z-index: 10;
+    position: absolute;
+    width:100%;
+    display: none;
+    justify-content: center;
+    margin-top: 1.5rem;
+
+    &__text{
+        width:80%;
+    //background: rgb(248, 29, 29);
+    padding: 1.5rem;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: 500;
+    color: rgb(233, 232, 232);
+    }
+}

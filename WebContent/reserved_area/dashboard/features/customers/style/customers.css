@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "Segoe Ui";
+}
+
+@-webkit-keyframes cascade-top {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes cascade-top {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+.cascade-animation-top {
+  position: relative;
+  -webkit-animation-name: cascade-top;
+          animation-name: cascade-top;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+table {
+  border-radius: 5px;
+  border: 1px solid #bdbdbd;
+  border-collapse: collapse;
+}
+
+th {
+  background: #315f93;
+  color: white;
+}
+
+tr:nth-of-type(odd) {
+  background: #ecf9ff;
+}
+
+.container-customers {
+  padding: 2rem;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: ' filter_ . add_button' ' table table table ';
+  row-gap: 1rem;
+  /*&__filter-label{
+
+        }*/
+  /*&__table-shots-tr{
+            background: #eefaff;
+        }*/
+  /*&__table-header-tr-element{
+        display: block;
+    }*/
+}
+
+.container-customers__filter {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: filter_;
+  width: 40ch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+
+.container-customers__filter-input {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0.2rem;
+}
+
+.container-customers__add-button {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: add_button;
+  background: #49d249;
+  color: white;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin: auto;
+  margin-right: 0px;
+}
+
+.container-customers__table {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: table;
+  width: 100%;
+}
+
+.container-customers__table-header-td {
+  border: 1px solid #bdbdbd;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.container-customers__table-body-td {
+  border: 1px solid #bdbdbd;
+  border-collapse: collapse;
+  padding: 0.5rem;
+}
+
+.container-customers__table-img-img {
+  max-width: 7vw;
+}
+
+.container-customers__table-name-td {
+  max-width: 20vw;
+}
+
+.container-customers__table-description-td {
+  max-width: 25vw;
+}
+
+.container-customers__table-price-td {
+  text-align: right;
+  width: 6rem;
+}
+
+.container-customers__table-material-td {
+  max-width: 8vw;
+}
+
+.container-customers__table-quantity-td {
+  text-align: right;
+}
+
+.container-customers__table-button-td {
+  width: 5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.3rem;
+}
+
+.container-customers__table-button {
+  cursor: pointer;
+  padding: 0.2rem;
+  max-width: 1.7rem;
+  border: 1px solid rgba(215, 215, 215, 0);
+  border-radius: 4px;
+}
+
+.container__table-body-tr-no-element {
+  text-align: center;
+  display: none;
+}
+
+.container__table-body-td-no-element {
+  padding: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+}
+
+.container__table-body-td-icon-img {
+  width: 3ch;
+}
+
+.modal-update-customers {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 105%;
+  background: #4f4f4f59;
+  z-index: 5;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation-name: cascade-top;
+          animation-name: cascade-top;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.modal-update-customers__container {
+  position: absolute;
+  width: 60rem;
+  background-color: white;
+  place-self: center;
+  border-radius: 6px;
+}
+
+.modal-update-customers__header {
+  background: #6565658c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  border-radius: 6px 6px 0 0;
+}
+
+.modal-update-customers__x {
+  cursor: pointer;
+}
+
+.modal-update-customers__content {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'surname_ name_ gender status status' '. . . . save_button';
+  gap: 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem 3rem;
+}
+
+.modal-update-customers__surname {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: surname_;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+
+.modal-update-customers__surname-label {
+  padding-left: 0.3rem;
+}
+
+.modal-update-customers__surname-field {
+  border: 1px solid rgba(101, 101, 101, 0.364);
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.modal-update-customers__name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name_;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+
+.modal-update-customers__name-label {
+  padding-left: 0.3rem;
+}
+
+.modal-update-customers__name-field {
+  border: 1px solid rgba(101, 101, 101, 0.364);
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.modal-update-customers__gender {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: gender;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+
+.modal-update-customers__gender-label {
+  padding-left: 0.3rem;
+}
+
+.modal-update-customers__gender-select {
+  border: 1px solid rgba(101, 101, 101, 0.364);
+  border-radius: 4px;
+  width: 6rem;
+  padding: 0.3rem;
+}
+
+.modal-update-customers__status {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 2;
+  grid-area: status;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.3rem;
+}
+
+.modal-update-customers__status-label {
+  padding-left: 0.3rem;
+}
+
+.modal-update-customers__status-field {
+  border: 1px solid rgba(101, 101, 101, 0.364);
+  padding: 0.3rem;
+  border-radius: 4px;
+}
+
+.modal-update-customers__save-button {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: save_button;
+  background: #3fcd3f;
+  color: white;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.modal-delete-customers {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 105%;
+  background: #4f4f4f59;
+  z-index: 5;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation-name: cascade-top;
+          animation-name: cascade-top;
+  -webkit-animation-duration: 1.3s;
+          animation-duration: 1.3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.modal-delete-customers__container {
+  position: absolute;
+  width: 20rem;
+  background-color: white;
+  place-self: center;
+  border-radius: 6px;
+}
+
+.modal-delete-customers__header {
+  background: #ff3333;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  border-radius: 6px 6px 0 0;
+}
+
+.modal-delete-customers__x {
+  cursor: pointer;
+}
+
+.modal-delete-customers__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1.5rem 1rem;
+  gap: 1rem;
+}
+
+.modal-delete-customers__text {
+  text-align: center;
+}
+
+.modal-delete-customers__button-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 2rem;
+}
+
+.modal-delete-customers__button {
+  padding: 0.5rem;
+  border-radius: 4px;
+  text-align: center;
+  width: 2rem;
+  background: #315f93;
+  cursor: pointer;
+}
+
+.modal-delete-customers__button-no {
+  background: #bbbcbc;
+}
+
+.modal-delete-customers__button-yes {
+  background: #ff3333;
+}
+/*# sourceMappingURL=customers.css.map */

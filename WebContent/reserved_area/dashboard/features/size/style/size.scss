@@ -1,0 +1,279 @@
+*{
+    margin:0;
+    padding: 0;
+    border:0;
+    font-family: "Segoe Ui";
+}
+
+@keyframes cascade-top {
+    from {top: -50px; opacity: 0;}
+    to {top: 0px; opacity: 1;}
+}
+
+.cascade-animation-top{
+    position: relative;
+    animation-name: cascade-top;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
+table{
+    border-radius: 5px;
+    border: 1px solid rgb(189, 189, 189);
+    border-collapse: collapse;
+}
+
+th{
+    background: #315f93;
+    color: white
+}
+
+tr:nth-of-type(odd) { 
+	background: #ecf9ff; 
+}
+
+.container-size{
+    padding: 2rem;
+    display: grid;
+    grid-template-areas: 
+                ' filter_ . add_button'
+                ' table table table ';
+    row-gap: 1rem;
+
+    &__filter{
+        grid-area: filter_;
+        width: 40ch;
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+        /*&__filter-label{
+
+        }*/
+
+        &__filter-input{
+            border: 1px solid black;
+            border-radius: 4px;
+            padding: 0.2rem;
+        }
+    
+    &__add-button{
+        
+        grid-area: add_button;
+        background: #49d249; //#2bdd2b
+        color: white;
+        border-radius: 3px;
+        padding: 0.5rem 1rem;
+        font-weight: 400;
+        cursor: pointer;
+        margin: auto;
+        margin-right: 0px;
+        
+    }
+
+    &__table{
+        grid-area: table;
+        width: 100%;
+    }
+
+        &__table-header-td{
+            border: 1px solid rgb(189, 189, 189);
+            border-collapse: collapse;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: 500;
+        }
+
+        /*&__table-shots-tr{
+            background: #eefaff;
+        }*/
+
+        &__table-body-td{
+            border: 1px solid rgb(189, 189, 189);
+            border-collapse: collapse;
+            padding: 0.5rem;
+        }
+        
+        &__table-size-td{
+            max-width: 20vw;
+            text-align: right
+        }
+
+        &__table-button-td{
+            width: 5rem;
+            justify-content: center;
+            gap: 0.3rem;
+        }
+
+            &__table-button{
+                cursor: pointer;
+                padding: 0.2rem;
+                max-width: 1.7rem;
+                border: 1px solid rgba(215, 215, 215, 0);
+                border-radius: 4px;
+            }
+
+    /*&__table-header-tr-element{
+        display: block;
+    }*/
+}
+
+.container{
+    &__table-body-tr-no-element{
+        text-align: center;
+        display: none;
+    }
+
+        &__table-body-td-no-element{
+            padding: 0.4rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+            &__table-body-td-icon-img{
+                width: 3ch;
+            }
+}
+
+.modal-update-size{
+    position:fixed;
+    top:0;
+    width: 100%;
+    height: 105%;
+    background: #4f4f4f59;
+    z-index: 5;
+    display: none;
+    justify-content: center;
+
+    animation-name: cascade-top;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    
+
+    &__container{
+        position: absolute;
+        width: 30rem;
+        background-color: white;
+        place-self: center;
+        border-radius: 6px;
+    }
+
+    &__header{
+        background: #6565658c;
+        display: flex;
+        justify-content: end;
+        border-radius: 6px 6px 0 0;
+    }
+
+        &__x{
+            cursor: pointer;
+        }
+
+    &__content{
+        display: grid;
+        grid-template-areas: 
+                    ' size_ .'
+                    ' . save_button';
+        gap: 1rem;
+        justify-content: space-between;
+        padding: 2rem 3rem;
+    }
+
+        &__size{
+            grid-area: size_;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+            &__size-label{
+                padding-left: 0.3rem;
+            }
+
+            &__size-field{
+                border: 1px solid rgba(101, 101, 101, 0.364);
+                padding: 0.3rem;
+                border-radius: 4px;
+                //width: 30ch;
+            }
+
+        &__save-button{
+            grid-area: save_button;
+            background: #3fcd3f; //#2bdd2b
+            color: white;
+            border-radius: 3px;
+            padding: 0.5rem 1rem;
+            font-weight: 400;
+            cursor: pointer;
+        }
+        
+}
+
+.modal-delete-size{
+    position:fixed;
+    top:0;
+    width: 100%;
+    height: 105%;
+    background: #4f4f4f59;
+    z-index: 5;
+    display: none;
+    justify-content: center;
+
+    animation-name: cascade-top;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+    
+
+    &__container{
+        position: absolute;
+        width: 20rem;
+        background-color: white;
+        place-self: center;
+        border-radius: 6px;
+    }
+
+    &__header{
+        background: #ff3333;
+        display: flex;
+        justify-content: end;
+        border-radius: 6px 6px 0 0;
+    }
+
+        &__x{
+            cursor: pointer;
+        }
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+        &__text{
+            text-align: center ;
+        }
+
+        &__button-div{
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+            &__button{
+                padding: 0.5rem;
+                border-radius: 4px;
+                text-align: center;
+                width: 2rem;
+                background: #315f93;
+                cursor: pointer;
+            }
+
+                &__button-no{
+                    background: #bbbcbc;
+                }
+
+                &__button-yes{
+                    background: #ff3333;
+                }
+}

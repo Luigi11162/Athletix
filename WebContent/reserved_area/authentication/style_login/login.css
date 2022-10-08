@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(18, 87, 195);
+  background: linear-gradient(90deg, rgb(18, 87, 195) 0%, rgb(1, 117, 161) 48%, rgb(0, 212, 255) 100%);
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+.login-wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  padding: 80px 40px 40px;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.form img {
+  position: absolute;
+  top: -20px;
+  left: calc(50% - 50px);
+  width: 100px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+/*.form h2 {
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  color: #d87709;
+}*/
+.form .input-group {
+  position: relative;
+}
+
+.form .input-group input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+.form .input-group label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s ease-out;
+}
+
+.form .input-group input:focus + label,
+.form .input-group input:valid + label {
+  transform: translateY(-18px);
+  font-size: 0.8rem;
+}
+
+#remember_user_checkbox_container {
+  margin: 0 auto;
+  margin-bottom: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+#remember_user_checkbox_container input {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
+}
+
+.submit-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  background: #e67e22;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 33px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-indietro {
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: white 1px solid;
+  color: white;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*.forgot-pw {
+  color: inherit;
+}
+
+#forgot-pw {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  z-index: 1;
+  background: #fff;
+  opacity: 0;
+  transition: 0.6s;
+}
+#forgot-pw:target {
+  height: 100%;
+  opacity: 1;
+}
+.close {
+  position: absolute;
+  right: 1.5rem;
+  top: 0.5rem;
+  font-size: 2rem;
+  font-weight: 900;
+  text-decoration: none;
+  color: inherit;
+}*/
+@-webkit-keyframes cascade-top {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes cascade-top {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@-webkit-keyframes cascade-top-reverse {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -150px;
+  }
+}
+@keyframes cascade-top-reverse {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -150px;
+  }
+}
+.cascade-animation-top {
+  position: relative;
+  -webkit-animation-name: cascade-top;
+          animation-name: cascade-top;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.cascade-animation-top-reverse {
+  position: relative;
+  -webkit-animation-name: cascade-top-reverse;
+          animation-name: cascade-top-reverse;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.notification {
+  position: absolute;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.text-notification {
+  width: 80%;
+  grid-area: notification;
+  background: rgb(248, 29, 29);
+  padding: 1.5rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  color: rgb(233, 232, 232);
+}/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@-webkit-keyframes cascade-top-index {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+}
+@keyframes cascade-top-index {
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@-webkit-keyframes cascade-top-reverse-index {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -150px;
+  }
+}
+
+@keyframes cascade-top-reverse-index {
+  from {
+    top: 0px;
+  }
+  to {
+    top: -150px;
+  }
+}
+
+.cascade-animation-top-index {
+  -webkit-animation-name: cascade-top-index;
+          animation-name: cascade-top-index;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.cascade-animation-top-reverse-index {
+  -webkit-animation-name: cascade-top-reverse-index;
+          animation-name: cascade-top-reverse-index;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.notification {
+  z-index: 10;
+  position: absolute;
+  width: 100%;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.notification__text {
+  width: 80%;
+  padding: 1.5rem;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 500;
+  color: #e9e8e8;
+}
+/*# sourceMappingURL=common.css.map */

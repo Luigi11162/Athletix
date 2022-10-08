@@ -1,0 +1,309 @@
+@import "../../../style/common.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: "Segoe UI", sans-serif;
+    //scroll-behavior: smooth;
+}
+
+.container-orders{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    min-height: 70%;
+
+    /*&__filter{
+
+    }*/
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        &-element{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+
+            border: 1px solid rgba(101, 101, 101, 0.364);
+            padding: 0.3rem;
+            border-radius: 4px;
+
+            &-header{
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+                cursor: pointer;
+
+                &-order{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+
+                    &-label{
+                        color: #7f7f7f;
+                    }
+
+                    &-label-write{
+                        text-align: center;
+                    }
+                }
+
+                &-date{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+
+                    &-label{
+                        color: #7f7f7f;
+                    }
+
+                    &-label-write{
+                        text-align: center;
+                    }
+                }
+
+                &-address{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+
+                    &-label{
+                        color: #7f7f7f;
+                    }
+
+                    &-label-write{
+                        text-align: center;
+                    }
+                }
+
+                &-payment{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.3rem;
+
+                    &-label{
+                        color: #7f7f7f;
+                    }
+
+                    &-label-write{
+                        text-align: center;
+                    }
+                }
+
+                &-bill{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 0.3rem;
+                    padding-right: 0.5rem;
+
+                    /*&-label{
+                        color: #7f7f7f;
+                    }*/
+
+                    &-button{
+                        width: 2rem;
+                        cursor:pointer;
+                        background: white;                   
+
+                        &-image{
+                            width: 100%;
+                            
+                        }
+                    }
+                }
+            }
+
+            &-line{
+                display: none;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                &-element{
+                    border: 1px solid rgba(101, 101, 101, 0.364);
+                    padding: 0.3rem;
+                    border-radius: 4px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 2rem;
+
+                    &-image{
+                        width: 10rem;
+                        &-img{
+                            width: 100%;
+                        }
+                    }
+
+                    &-title{
+                        max-width: 20rem;
+                        text-align: center;
+                    }
+
+                    &-price{
+                        &::before{
+                            content: "€ ";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 870px) {
+    .container-orders{
+        &__content{
+    
+            &-element{
+    
+                &-header{
+                    justify-content: space-around;
+    
+                    &-address{
+                        display: none;
+                    }
+    
+                    &-payment{
+                        display: none;
+                    }
+                }
+
+                &-line{
+    
+                    &-element{
+                        border: 1px solid rgba(101, 101, 101, 0.364);
+                        padding: 0.3rem;
+                        border-radius: 4px;
+    
+                        display: grid;
+                        grid-template-areas: 'image_ title title title'
+                                            'image_ price quantity iva';
+                        //grid-template-columns: auto 25% 20% 20% ;
+                        gap: 2rem;
+    
+                        &-image{
+                            grid-area: image_;
+                            width: 7rem;
+                            &-img{
+                                width: 100%;
+                            }
+                        }
+    
+                        &-title{
+                            grid-area: title;
+                            max-width: 40rem;
+                            text-align: center;
+                        }
+    
+                        &-price{
+                            grid-area: price;
+                            text-align: center;
+                            &::before{
+                                content: "€ ";
+                            }
+                        }
+
+                        &-quantity{
+                            grid-area: quantity;
+                            text-align: center;
+                        }
+
+                        &-iva{
+                            grid-area: iva;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .container-orders{
+        &__content{
+    
+            &-element{
+    
+                &-header{
+                    justify-content: space-around;
+    
+                    &-address{
+                        display: none;
+                    }
+    
+                    &-payment{
+                        display: none;
+                    }
+                }
+
+                &-line{
+    
+                    &-element{
+                        border: 1px solid rgba(101, 101, 101, 0.364);
+                        padding: 0.3rem;
+                        border-radius: 4px;
+    
+                        display: grid;
+                        grid-template-areas: 'title' 
+                                            'image_ '
+                                            'price'
+                                            'quantity'
+                                            'iva';
+                        //grid-template-columns: auto 25% 20% 20% ;
+                        gap: 1rem;
+    
+                        &-image{
+                            grid-area: image_;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            &-img{
+                                width: 8rem;
+                            }
+                        }
+    
+                        &-title{
+                            grid-area: title;
+                            //max-width: 40rem;
+                            text-align: center;
+                        }
+    
+                        &-price{
+                            grid-area: price;
+                            text-align: center;
+                            &::before{
+                                content: "Prezzo: € ";
+                            }
+                        }
+
+                        &-quantity{
+                            grid-area: quantity;
+                            text-align: center;
+                            &::before{
+                                content: "Quantità: ";
+                            }
+                        }
+
+                        &-iva{
+                            grid-area: iva;
+                            text-align: center;
+                            &::before{
+                                content: "Iva: ";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

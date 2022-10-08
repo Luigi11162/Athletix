@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "common_dashboard_style.scss"
+    ],
+    "names": [],
+    "file": "common_dashboard_style.css"
+}
